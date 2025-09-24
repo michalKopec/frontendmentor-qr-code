@@ -1,0 +1,94 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Figma variables for colors / spacing and font size  */
+
+:root {
+  /* Colors */
+  --slate-900: #1F314F;
+  --slate-500: #68778D;
+  --slate-300: #D5E1EF;
+  --blue-600: #2C7DFA;
+  --blue-500: #3685FF;
+  --white: #FFFFFF;
+  
+  /* Spacing */
+  --spacing-500: 40px;
+  --spacing-300: 24px;
+  --spacing-200: 16px;
+  
+  /* Font Size */
+  --text-preset-1: 22px;
+  --text-preset-2: 15px;
+
+/* Custom fonts */
+  --font-outfit: 'Outfit', sans-serif;
+
+ /* Typography */
+  --text-preset-1-size: 22px;
+  --text-preset-1-line-height: 120%;
+  --text-preset-2-size: 15px;
+  --text-preset-2-line-height: 140%;
+}
+
+/* Typography Classes */
+.text-preset-1 {
+  font-family: var(--font-outfit);
+  font-size: var(--text-preset-1-size);
+  line-height: var(--text-preset-1-line-height);
+  font-weight: bold;
+  letter-spacing: 0;
+  color:var(--slate-900); 
+}
+
+.text-preset-2 {
+  font-family: var(--font-outfit);  
+  font-size: var(--text-preset-2-size);
+  line-height: var(--text-preset-2-line-height);
+  font-weight: normal;
+  letter-spacing: 0.2px;
+  color:var(--slate-500)    
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    background-color: var(--slate-300);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
+}
+
+#card { 
+    width: 320px;
+    height: 500px; 
+    padding-left: var(--spacing-200);
+    padding-right: var(--spacing-200);
+    padding-top:var(--spacing-200);
+    background-color: var(--white); 
+    border-radius: 20px;
+}
+
+.qr-code {
+    /* Scale the image to 50% of its size */
+    width: 288px;
+    height: 288px; 
+    border-radius: 10px;
+}
+
+p {
+    padding-left: var(--spacing-200);
+    padding-right: var(--spacing-200);
+}
+
+.attribution { 
+    margin-top:var(--spacing-500);
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
