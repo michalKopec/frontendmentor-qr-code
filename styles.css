@@ -27,7 +27,9 @@
 
  /* Typography */
   --text-preset-1-size: 22px;
-  --text-preset-1-line-height: 120%;
+  /* using exactly 26px to match Figma instead of 120% which will 
+  result in a 52.8px two line H1 instead of 52px in Figma*/
+  --text-preset-1-line-height: 26px; 
   --text-preset-2-size: 15px;
   --text-preset-2-line-height: 140%;
 }
@@ -48,7 +50,7 @@
   line-height: var(--text-preset-2-line-height);
   font-weight: normal;
   letter-spacing: 0.2px;
-  color:var(--slate-500)    
+  color:var(--slate-500);     
 }
 
 body {
@@ -64,7 +66,7 @@ body {
 
 #card { 
     width: 320px;
-    height: 500px; 
+    height: 499px; /*it's weird 499px instead of 500px but it's matching Figma 499px :) */ 
     padding-left: var(--spacing-200);
     padding-right: var(--spacing-200);
     padding-top:var(--spacing-200);
@@ -77,9 +79,27 @@ body {
     width: 288px;
     height: 288px; 
     border-radius: 10px;
+    /* remove the image baseline alignment gap */
+    display: block; 
+}
+
+h1 {
+    margin: 0;
+    margin-top: var(--spacing-300); 
+    padding-left: var(--spacing-200);
+    padding-right: var(--spacing-200);
+    /* H1 vertical size is still 52.8px, Figma has a 22px font with a 120% line height mesuring
+    exactly 52px for two lines whereas Chrome has 22px * 1.2 = 26.4px * 2 = 52.8px. Read
+    interesting things about browser vs Figma font rendering discrepancies. Figma uses its own 
+    font rendering engine. 
+    
+    Fixed by setting the line-height to 26px exactly instead of using 120%
+    */
 }
 
 p {
+    margin: 0;
+    margin-top: var(--spacing-200); 
     padding-left: var(--spacing-200);
     padding-right: var(--spacing-200);
 }
